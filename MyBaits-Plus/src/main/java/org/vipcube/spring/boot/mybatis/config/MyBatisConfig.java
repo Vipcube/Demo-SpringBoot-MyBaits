@@ -32,6 +32,7 @@ public class MyBatisConfig {
 		@Override
 		public void insertFill( MetaObject metaObject ) {
 			this.setFieldValByName( "createTime", LocalDateTime.now(), metaObject );
+			this.setFieldValByName("version", 0, metaObject);
 		}
 
 		@Override
