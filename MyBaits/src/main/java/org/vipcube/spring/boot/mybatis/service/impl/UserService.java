@@ -1,12 +1,14 @@
 package org.vipcube.spring.boot.mybatis.service.impl;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.vipcube.spring.boot.mybatis.entity.User;
 import org.vipcube.spring.boot.mybatis.entity.UserWithLogs;
 import org.vipcube.spring.boot.mybatis.repository.UserRepository;
 import org.vipcube.spring.boot.mybatis.service.IUserService;
 
 @Service
+@Transactional
 public class UserService implements IUserService {
 	private final UserRepository repository;
 

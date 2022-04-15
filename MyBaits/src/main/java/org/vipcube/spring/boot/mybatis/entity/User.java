@@ -13,4 +13,5 @@ public class User {
 	private long id;
 	private String name;
 	private Integer age;
+	private Integer version;
 }
