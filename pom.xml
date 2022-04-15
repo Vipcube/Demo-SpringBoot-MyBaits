@@ -101,6 +101,7 @@
 	</build>
 
 	<modules>
+		<module>Database</module>
 		<module>MyBaits</module>
 		<module>MyBaits-Plus</module>
 	</modules>

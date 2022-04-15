@@ -11,14 +11,6 @@ spring:
     username: root
     password: test123456
 
-  sql:
-    init:
-      schema-locations: classpath:schema.sql
-      data-locations: classpath:data.sql
-      username: ${spring.datasource.username}
-      password: ${spring.datasource.password}
-      mode: never
-
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
 
