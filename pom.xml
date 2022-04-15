@@ -102,5 +102,6 @@
 
 	<modules>
 		<module>MyBaits</module>
+		<module>MyBaits-Plus</module>
 	</modules>
 </project>
