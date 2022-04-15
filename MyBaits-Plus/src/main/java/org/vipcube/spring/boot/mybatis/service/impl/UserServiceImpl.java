@@ -1,10 +1,11 @@
 package org.vipcube.spring.boot.mybatis.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.vipcube.spring.boot.mybatis.domain.User;
-import org.vipcube.spring.boot.mybatis.service.UserService;
-import org.vipcube.spring.boot.mybatis.mapper.UserMapper;
 import org.springframework.stereotype.Service;
+import org.vipcube.spring.boot.mybatis.domain.User;
+import org.vipcube.spring.boot.mybatis.domain.UserWithLogs;
+import org.vipcube.spring.boot.mybatis.mapper.UserMapper;
+import org.vipcube.spring.boot.mybatis.service.UserService;
 
 /**
 * @author Delos
@@ -14,7 +15,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     implements UserService{
-
+	public UserWithLogs selectLeftJoinLogs( long id ){
+		return this.baseMapper.selectLeftJoinLogs( id );
+	}
 }
 
 

@@ -1,7 +1,8 @@
 package org.vipcube.spring.boot.mybatis.mapper;
 
-import org.vipcube.spring.boot.mybatis.domain.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.vipcube.spring.boot.mybatis.domain.User;
+import org.vipcube.spring.boot.mybatis.domain.UserWithLogs;
 
 /**
 * @author Delos
@@ -10,7 +11,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @Entity org.vipcube.spring.boot.mybatis.domain.User
 */
 public interface UserMapper extends BaseMapper<User> {
-
+	UserWithLogs selectLeftJoinLogs( long id );
 }
 
 

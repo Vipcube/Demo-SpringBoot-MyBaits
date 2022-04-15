@@ -1,7 +1,8 @@
 package org.vipcube.spring.boot.mybatis.service;
 
-import org.vipcube.spring.boot.mybatis.domain.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.vipcube.spring.boot.mybatis.domain.User;
+import org.vipcube.spring.boot.mybatis.domain.UserWithLogs;
 
 /**
 * @author Delos
@@ -9,5 +10,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2022-04-15 14:45:43
 */
 public interface UserService extends IService<User> {
-
+	UserWithLogs selectLeftJoinLogs( long id );
 }

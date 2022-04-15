@@ -21,3 +21,8 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
+
+logging:
+  level:
+    root: warn
+    org.vipcube.spring.boot.mybatis.mapper: trace
