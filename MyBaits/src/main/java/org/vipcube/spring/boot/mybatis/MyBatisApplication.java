@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @MapperScan( {
-		"org.vipcube.spring.boot.mybatis.mapper"
+		"org.vipcube.spring.boot.mybatis.repository"
 } )
 @SpringBootApplication
 public class MyBatisApplication {
