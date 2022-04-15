@@ -1,5 +1,3 @@
-use test;
-
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`(
     `id`   int(32)     NOT NULL AUTO_INCREMENT,
