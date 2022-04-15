@@ -3,6 +3,6 @@
 		"http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<package name="com.example.spring.boot.mybatis.entity"/>
+		<package name="org.vipcube.spring.boot.mybatis.entity"/>
 	</typeAliases>
 </configuration>

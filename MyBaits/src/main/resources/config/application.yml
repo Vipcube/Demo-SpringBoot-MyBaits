@@ -21,6 +21,6 @@ spring:
 
 mybatis:
   config-location: classpath:mybatis-config.xml
-  mapper-locations: classpath:mapper/*Mapper.xml
+  mapper-locations: classpath:mapper/*Repository.xml
   # If not use config-location, can change to this
   #type-aliases-package: org.vipcube.spring.boot.mybatis.entity
