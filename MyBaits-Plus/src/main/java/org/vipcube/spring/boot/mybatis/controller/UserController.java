@@ -1,5 +1,6 @@
 package org.vipcube.spring.boot.mybatis.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.vipcube.spring.boot.mybatis.domain.User;
 import org.vipcube.spring.boot.mybatis.service.UserService;
@@ -35,6 +37,11 @@ public class UserController {
 	@DeleteMapping( value = "{id}" )
 	public ResponseEntity<?> deleteUserById( @PathVariable long id ){
 		return ResponseEntity.ok( this.service.removeById( id ) );
+	}
+
+	@GetMapping( value = "", produces = MediaType.APPLICATION_JSON_VALUE )
+	public ResponseEntity<?> selectAll( @RequestParam long page, @RequestParam long size ){
+		return ResponseEntity.ok( this.service.page( Page.of( page, size ) ) );
 	}
 
 	@GetMapping( value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE )

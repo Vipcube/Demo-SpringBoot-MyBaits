@@ -1,6 +1,7 @@
 package org.vipcube.spring.boot.mybatis.config;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
+import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.OptimisticLockerInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import org.apache.ibatis.reflection.MetaObject;
@@ -20,13 +21,11 @@ public class MyBatisConfig {
 	}
 
 	@Bean
-	public OptimisticLockerInnerInterceptor optimisticLockerInnerInterceptor(){
-		return new OptimisticLockerInnerInterceptor();
-	}
-
-	@Bean
-	public PaginationInnerInterceptor paginationInnerInterceptor(){
-		return new PaginationInnerInterceptor();
+	public MybatisPlusInterceptor mybatisPlusInterceptor() {
+		MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
+		interceptor.addInnerInterceptor(new PaginationInnerInterceptor());
+		interceptor.addInnerInterceptor(new OptimisticLockerInnerInterceptor());
+		return interceptor;
 	}
 
 	private class AuditingMetaObjectHandler implements MetaObjectHandler {
