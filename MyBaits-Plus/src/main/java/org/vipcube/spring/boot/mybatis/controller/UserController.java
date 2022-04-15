@@ -49,6 +49,13 @@ public class UserController {
 		return ResponseEntity.ok( this.service.getById( id ) );
 	}
 
+	@GetMapping( value = "/names/{name}", produces = MediaType.APPLICATION_JSON_VALUE )
+	public ResponseEntity<?> selectByName( @PathVariable String name ){
+		return ResponseEntity.ok( this.service.lambdaQuery()
+				.eq( User::getName, name )
+				.list() );
+	}
+
 	@GetMapping( value = "/left-join-logs/{id}", produces = MediaType.APPLICATION_JSON_VALUE )
 	public ResponseEntity<?> selectLeftJoinLogs( @PathVariable long id ){
 		return ResponseEntity.ok( this.service.selectLeftJoinLogs( id ) );
