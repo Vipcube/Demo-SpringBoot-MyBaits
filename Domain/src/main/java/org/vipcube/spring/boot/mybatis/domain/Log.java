@@ -19,12 +19,12 @@ public class Log implements Serializable {
      *
      */
     //@TableId(type = IdType.AUTO)
-    private Integer id;
+    private Long id;
 
     /**
      *
      */
-    private Integer userId;
+    private Long userId;
 
     /**
      *
