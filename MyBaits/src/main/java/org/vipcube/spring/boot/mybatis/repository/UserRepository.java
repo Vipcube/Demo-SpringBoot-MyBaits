@@ -1,8 +1,8 @@
 package org.vipcube.spring.boot.mybatis.repository;
 
 import org.springframework.stereotype.Repository;
-import org.vipcube.spring.boot.mybatis.entity.User;
-import org.vipcube.spring.boot.mybatis.entity.UserWithLogs;
+import org.vipcube.spring.boot.mybatis.domain.User;
+import org.vipcube.spring.boot.mybatis.domain.UserWithLogs;
 
 @Repository
 public interface UserRepository {

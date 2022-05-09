@@ -10,3 +10,24 @@ services:
       MYSQL_USER: ${MARIADB_USERNAME}
       MYSQL_ROOT_PASSWORD: ${MARIADB_PASSWORD}
       MYSQL_DATABASE: ${MARIADB_DATABASE}
+    networks:
+      - app
+
+  shardingsphere-proxy:
+    image: apache/shardingsphere-proxy:5.1.1
+    hostname: proxy
+    ports:
+      - "3307:3307"
+    environment:
+      PORT: 3307 # default is 3307
+    volumes:
+      - ./conf:/opt/shardingsphere-proxy/conf
+      - ./proxy-lib:/opt/shardingsphere-proxy/ext-lib
+    depends_on:
+      - mariadb
+    networks:
+      - app
+
+networks:
+  app:
+    driver: bridge

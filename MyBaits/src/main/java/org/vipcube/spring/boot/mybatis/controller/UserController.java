@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.vipcube.spring.boot.mybatis.entity.User;
+import org.vipcube.spring.boot.mybatis.domain.User;
 import org.vipcube.spring.boot.mybatis.service.IUserService;
 
 @RestController

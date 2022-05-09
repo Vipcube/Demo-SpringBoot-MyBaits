@@ -49,8 +49,13 @@
 			</dependency>
 			<dependency>
 				<groupId>com.baomidou</groupId>
-				<artifactId>mybatis-plus-extension</artifactId>
+				<artifactId>mybatis-plus-annotation</artifactId>
 				<version>3.5.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.vipcube.spring</groupId>
+				<artifactId>domain</artifactId>
+				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -104,5 +109,6 @@
 		<module>Database</module>
 		<module>MyBaits</module>
 		<module>MyBaits-Plus</module>
+		<module>Domain</module>
 	</modules>
 </project>

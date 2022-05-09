@@ -1,7 +1,7 @@
 package org.vipcube.spring.boot.mybatis.service;
 
-import org.vipcube.spring.boot.mybatis.entity.User;
-import org.vipcube.spring.boot.mybatis.entity.UserWithLogs;
+import org.vipcube.spring.boot.mybatis.domain.User;
+import org.vipcube.spring.boot.mybatis.domain.UserWithLogs;
 
 public interface IUserService {
 	long addUser( User user );
