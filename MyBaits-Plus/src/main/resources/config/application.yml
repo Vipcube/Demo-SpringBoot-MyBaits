@@ -7,7 +7,8 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/test
+#    url: jdbc:mysql://localhost:3306/test # standard alone
+    url: jdbc:mysql://localhost:3307/sharding_test # proxy
     username: root
     password: test123456
 
