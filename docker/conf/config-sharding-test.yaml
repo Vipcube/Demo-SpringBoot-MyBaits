@@ -1,0 +1,35 @@
+schemaName: sharding_test
+
+dataSources:
+  ds_0:
+    url: jdbc:mysql://mariadb:3306/test
+    username: root
+    password: test123456
+    connectionTimeoutMilliseconds: 30000
+    idleTimeoutMilliseconds: 60000
+    maxLifetimeMilliseconds: 1800000
+    maxPoolSize: 50
+    minPoolSize: 1
+
+rules:
+  - !SHARDING
+    tables:
+      user:
+        actualDataNodes: ds_0.user_$->{0..1}
+        tableStrategy:
+          standard:
+            shardingColumn: id
+            shardingAlgorithmName: user_inline
+        keyGenerateStrategy:
+          column: id
+          keyGeneratorName: snowflake
+
+    shardingAlgorithms:
+      user_inline:
+        type: INLINE
+        props:
+          algorithm-expression: user_${id % 2}
+
+    keyGenerators:
+      snowflake:
+        type: SNOWFLAKE
